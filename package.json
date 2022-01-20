@@ -1,0 +1,26 @@
+{
+  "name": "openmapsamples",
+  "version": "0.1.0",
+  "description": "A library to generate and provide sample data for testing vector-based map renderings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamfranco/OpenMapSamples.git"
+  },
+  "keywords": [
+    "osm",
+    "OpenStreetMap",
+    "geojson",
+    "maplibre",
+    "map"
+  ],
+  "author": "Adam Franco",
+  "license": "LGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/adamfranco/OpenMapSamples/issues"
+  },
+  "homepage": "https://github.com/adamfranco/OpenMapSamples#readme"
+}
