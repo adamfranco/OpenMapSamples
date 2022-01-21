@@ -2,9 +2,10 @@
   "name": "openmapsamples",
   "version": "0.1.0",
   "description": "A library to generate and provide sample data for testing vector-based map renderings.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "node scripts/test.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/adamfranco/OpenMapSamples/issues"
   },
-  "homepage": "https://github.com/adamfranco/OpenMapSamples#readme"
+  "homepage": "https://github.com/adamfranco/OpenMapSamples#readme",
+  "dependencies": {
+    "geojson-validation": "^1.0.2"
+  }
 }
