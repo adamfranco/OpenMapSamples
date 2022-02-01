@@ -1,29 +1,32 @@
 "use strict";
 
-import SampleSet from "../lib/SampleSet.js";
-import ExampleSample from "../lib/Sample/ExampleSample.js";
-import SimpleSample from "../lib/Sample/SimpleSample.js";
+import Sample from "../lib/Sample.js";
+import Layer from "../lib/Layer.js";
+import ExampleSampleData from "../lib/SampleData/ExampleSampleData.js";
+import SimpleSampleData from "../lib/SampleData/SimpleSampleData.js";
 
 // Create a new set to hold some samples.
-var set = new SampleSet("Test", "This is a test set of samples.");
+var sample = new Sample("Test", "This is a test samples.");
+var placeLayer = sample.addLayer(new Layer('place'));
 
 // Create a Sample and add it to the set.
-var exampleSample = new ExampleSample();
-set.addSample(exampleSample);
+var exampleSampleData = new ExampleSampleData();
+placeLayer.addSampleData(exampleSampleData);
 
 // Create a SimpleSample and set its GeoJSON.
-var simpleSample = new SimpleSample([100.3, 0], 12);
-simpleSample.setGeoJson(exampleSample.getGeoJson());
-set.addSample(simpleSample);
+var simpleSampleData = placeLayer.addSampleData(new SimpleSampleData());
+simpleSampleData.setGeoJson(exampleSampleData.getGeoJson(12));
 
 // Make sure the SimpleSample validates its GeoJSON.
 try {
-  simpleSample.setGeoJson({});
+  simpleSampleData.setGeoJson({});
   console.log("Error: Should not have reached this point.");
 } catch (e) {
   console.log("Succesfully caught invalid GeoJSON.");
   console.log("\t" + e);
 }
 
+var placeLayer2 = sample.getLayer('place');
+console.log(placeLayer2.getGeoJson(10));
 
-console.log(set);
+console.log(sample);
