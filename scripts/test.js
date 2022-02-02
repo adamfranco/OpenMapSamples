@@ -2,7 +2,7 @@
 
 import Sample from "../lib/Sample.js";
 import Layer from "../lib/Layer.js";
-import ExampleSampleData from "../lib/SampleData/ExampleSampleData.js";
+import { ExamplePlaceData, ExampleTransportationData } from "../lib/SampleData/ExampleSampleData.js";
 import SimpleSampleData from "../lib/SampleData/SimpleSampleData.js";
 
 // Create a new set to hold some samples.
@@ -10,7 +10,7 @@ var sample = new Sample("Test", "This is a test samples.");
 var placeLayer = sample.addLayer(new Layer('place'));
 
 // Create a Sample and add it to the set.
-var exampleSampleData = new ExampleSampleData();
+var exampleSampleData = new ExamplePlaceData();
 placeLayer.addSampleData(exampleSampleData);
 
 // Create a SimpleSample and set its GeoJSON.
