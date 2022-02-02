@@ -29,4 +29,7 @@ try {
 var placeLayer2 = sample.getLayer('place');
 console.log(placeLayer2.getGeoJson(10));
 
-console.log(sample);
+// Register some zoom variants.
+console.log(sample.getZoomVariants());
+sample.setZoomVariant(6, [-101, 39]);
+console.log(sample.getZoomVariants());
