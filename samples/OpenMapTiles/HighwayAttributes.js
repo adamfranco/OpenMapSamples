@@ -7,7 +7,7 @@ import WayRowsSampleData from "../../lib/SampleData/WayRowsSampleData.js";
 var sample = new Sample(
   'highway-attributes',
   'Highway Attributes',
-  'A grid of highways showing possible attribute combinations.',
+  'A grid of highways showing possible attribute combinations. (<a href="https://github.com/adamfranco/OpenMapSamples/blob/main/samples/OpenMapTiles/HighwayAttributes.js">source</a>)',
   [-100, 40],
   15
 );
