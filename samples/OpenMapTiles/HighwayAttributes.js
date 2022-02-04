@@ -20,7 +20,6 @@ var sampleData = new WayRowsSampleData(
     { 'name:latin': 'secondary', 'class': 'secondary' },
     { 'name:latin': 'tertiary', 'class': 'tertiary' },
     { 'name:latin': 'minor', 'class': 'minor' },
-    { 'name:latin': 'residential', 'class': 'residential' },
     { 'name:latin': 'service', 'class': 'service' },
     { 'name:latin': 'driveway', 'class': 'service', 'service': 'driveway' },
     { 'name:latin': 'alley', 'class': 'service', 'service': 'alley' },
