@@ -16,9 +16,13 @@ var sampleData = new WayRowsSampleData(
   [
     { 'name:latin': 'motorway', 'class': 'motorway' },
     { 'name:latin': 'trunk', 'class': 'trunk' },
+    { 'name:latin': 'trnk expy', 'class': 'trunk', 'expressway': 1},
     { 'name:latin': 'primary', 'class': 'primary' },
+    { 'name:latin': 'pri expy', 'class': 'primary', 'expressway': 1},
     { 'name:latin': 'secondary', 'class': 'secondary' },
+    { 'name:latin': 'sec expy', 'class': 'secondary', 'expressway': 1},
     { 'name:latin': 'tertiary', 'class': 'tertiary' },
+    { 'name:latin': 'ter expy', 'class': 'tertiary', 'expressway': 1},
     { 'name:latin': 'minor', 'class': 'minor' },
     { 'name:latin': 'service', 'class': 'service' },
     { 'name:latin': 'driveway', 'class': 'service', 'service': 'driveway' },
