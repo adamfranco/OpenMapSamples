@@ -9,43 +9,43 @@ var sample = new Sample(
   'Highway Attributes',
   'A grid of highways showing possible attribute combinations.',
   [-100, 40],
-  12
+  15
 );
 
 var sampleData = new WayRowsSampleData(
   [
-    { 'name': 'motorway', 'class': 'motorway' },
-    { 'name': 'trunk', 'class': 'trunk' },
-    { 'name': 'primary', 'class': 'primary' },
-    { 'name': 'secondary', 'class': 'secondary' },
-    { 'name': 'tertiary', 'class': 'tertiary' },
-    { 'name': 'minor', 'class': 'minor' },
-    { 'name': 'residential', 'class': 'residential' },
-    { 'name': 'service', 'class': 'service' },
-    { 'name': 'driveway', 'class': 'service', 'service': 'driveway' },
-    { 'name': 'alley', 'class': 'service', 'service': 'alley' },
-    { 'name': 'parking_aisle', 'class': 'service', 'service': 'parking_aisle' },
-    { 'name': 'raceway', 'class': 'raceway' },
-    { 'name': 'track', 'class': 'track' },
-    { 'name': 'path', 'class': 'path', 'subclass': 'path' },
-    { 'name': 'cycleway', 'class': 'path', 'subclass': 'cycleway' },
-    { 'name': 'bridleway', 'class': 'path', 'subclass': 'bridleway' },
-    { 'name': 'footway', 'class': 'path', 'subclass': 'footway' },
-    { 'name': 'steps', 'class': 'path', 'subclass': 'steps' },
+    { 'name:latin': 'motorway', 'class': 'motorway' },
+    { 'name:latin': 'trunk', 'class': 'trunk' },
+    { 'name:latin': 'primary', 'class': 'primary' },
+    { 'name:latin': 'secondary', 'class': 'secondary' },
+    { 'name:latin': 'tertiary', 'class': 'tertiary' },
+    { 'name:latin': 'minor', 'class': 'minor' },
+    { 'name:latin': 'residential', 'class': 'residential' },
+    { 'name:latin': 'service', 'class': 'service' },
+    { 'name:latin': 'driveway', 'class': 'service', 'service': 'driveway' },
+    { 'name:latin': 'alley', 'class': 'service', 'service': 'alley' },
+    { 'name:latin': 'parking_aisle', 'class': 'service', 'service': 'parking_aisle' },
+    { 'name:latin': 'raceway', 'class': 'raceway' },
+    { 'name:latin': 'track', 'class': 'track' },
+    { 'name:latin': 'path', 'class': 'path', 'subclass': 'path' },
+    { 'name:latin': 'cycleway', 'class': 'path', 'subclass': 'cycleway' },
+    { 'name:latin': 'bridleway', 'class': 'path', 'subclass': 'bridleway' },
+    { 'name:latin': 'footway', 'class': 'path', 'subclass': 'footway' },
+    { 'name:latin': 'steps', 'class': 'path', 'subclass': 'steps' },
   ],
   [
     {},
-    { 'name': 'bridge', 'brunnel': 'bridge', 'layer': 1 },
-    { 'name': 'tunnel', 'brunnel': 'tunnel', 'layer': -1 },
-    { 'name': 'ford', 'brunnel': 'ford' },
-    { 'name': 'oneway', 'oneway': 1 },
-    { 'name': 'paved', 'surface': 'paved' },
-    { 'name': 'unpaved', 'surface': 'unpaved' },
+    { 'name:latin': 'bridge', 'brunnel': 'bridge', 'layer': 1 },
+    { 'name:latin': 'tunnel', 'brunnel': 'tunnel', 'layer': -1 },
+    { 'name:latin': 'ford', 'brunnel': 'ford' },
+    { 'name:latin': 'oneway', 'oneway': 1 },
+    { 'name:latin': 'paved', 'surface': 'paved' },
+    { 'name:latin': 'unpaved', 'surface': 'unpaved' },
   ],
   [-100, 40]
 );
 sample.addLayer(new Layer('transportation')).addSampleData(sampleData);
-sample.addLayer(new Layer('transportation_names')).addSampleData(sampleData);
+sample.addLayer(new Layer('transportation_name')).addSampleData(sampleData);
 
 for (var i = 4; i <= 20; i = i + 1) {
   sample.setZoomVariant(i);
