@@ -10,7 +10,7 @@ var sample = new Sample(
   'highway-link-attributes',
   'Highway Link Attributes',
   'A grid of highways and links showing possible attribute combinations. (<a href="https://github.com/adamfranco/OpenMapSamples/blob/main/samples/OpenMapTiles/HighwayLinkAttributes.js">source</a>)',
-  [-100, 40],
+  [0, 0],
   15
 );
 
@@ -42,7 +42,7 @@ var sampleData = new WayRowsSampleData(
     { 'name': 'paved', 'surface': 'paved' },
     { 'name': 'unpaved', 'surface': 'unpaved' },
   ],
-  [-100, 40]
+  [0, 0]
 );
 sample.addLayer(new Layer('transportation')).addSampleData(
   new RemovePropertiesTransformation(sampleData, ['name'])
