@@ -4,7 +4,7 @@ import Sample from "../lib/Sample.js";
 import Layer from "../lib/Layer.js";
 import { ExamplePlaceData, ExampleTransportationData } from "../lib/SampleData/ExampleSampleData.js";
 import SimpleSampleData from "../lib/SampleData/SimpleSampleData.js";
-import highwaySample from "../samples/OpenMapTiles/HighwayAttributes.js";
+import {default as OpenMapTilesSamples} from "../samples/OpenMapTiles/index.js";
 
 // Create a new set to hold some samples.
 var sample = new Sample("Test", "This is a test samples.");
@@ -35,5 +35,5 @@ console.log(sample.getZoomVariants());
 sample.setZoomVariant(6, [-101, 39]);
 console.log(sample.getZoomVariants());
 
-console.log(highwaySample);
-console.log(highwaySample.getLayer('transportation').getGeoJson(12)['features'][2]['geometry']);
+console.log(OpenMapTilesSamples);
+console.log(OpenMapTilesSamples[0].getLayer('transportation').getGeoJson(12)['features'][2]['geometry']);
