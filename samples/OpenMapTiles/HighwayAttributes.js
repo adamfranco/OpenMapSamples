@@ -66,15 +66,4 @@ for (var i = 4; i <= 20; i = i + 1) {
   sample.setZoomVariant(i);
 }
 
-// Set a custom row-hight callback to give more space to motorways at high zooms.
-sampleData.setRowHeightCallback(function(zoom, row, numRows) {
-  if (zoom > 18 && row < 1) {
-    return 24 / numRows / Math.pow(2, zoom - 4);
-  } else if (zoom > 16 && row < 1) {
-    return 22 / numRows / Math.pow(2, zoom - 4);
-  } else {
-    return 20 / numRows / Math.pow(2, zoom - 4);
-  }
-});
-
-export { sample as default};
+export { sample as default, sampleData as sampleData};
