@@ -25,6 +25,14 @@ The `samples/` directory contains a repository of samples with full data that ca
 #### OpenMapTiles
 The `samples/OpenMapTiles/` directory contains samples with properties matching the [OpenMapTiles vector-data schema](https://openmaptiles.org/schema/).
 
+Example screenshots of the OpenMapTiles samples as rendered by the MapTiler "OSM Standard" style:
+
+![Highway Attributes](https://user-images.githubusercontent.com/25242/153935470-9e2fb1a6-7577-4b3b-8720-55281bc9b87f.png)
+
+![Highway Intersections](https://user-images.githubusercontent.com/25242/153935474-387884dc-100e-43c7-9b74-b731a0e282ee.png)
+
+![Highway Bridge & Tunnel](https://user-images.githubusercontent.com/25242/153935476-453918ed-41a9-47d7-8190-aa4ebfc4dbd7.png)
+
 ## Controls and integrations
 
 The OpenMapSamples classes and Samples are renderer agnostic and may be used by any map display system.
