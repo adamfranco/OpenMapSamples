@@ -2,6 +2,8 @@
 
 OpenMapSamples is a library to generate and provide sample data for testing vector-based map renderings. Sample data is returned as GeoJSON and can be rendered by mapping systems and styles to validate their coverage of combinations of data.
 
+You can view a demonstration of this control at https://adamfranco.github.io/OpenMapSamples-examples/.
+
 ## Structure
 
 ### Library classes
@@ -21,7 +23,7 @@ Each `Layer` can have 0 or more `SampleData` added to it. The only requirement o
 The `samples/` directory contains a repository of samples with full data that can be used directly to test map renderings. While users are welcome to utilize the library classes to develop their own data-sets, consider contributing useful samples to back to this project.
 
 #### OpenMapTiles
-The `samples/OpenMapTiles/` directory contains samples with properties matching the [OpenMapTiles vector-data schema](https://openmaptiles.org/schema/). 
+The `samples/OpenMapTiles/` directory contains samples with properties matching the [OpenMapTiles vector-data schema](https://openmaptiles.org/schema/).
 
 ## Controls and integrations
 
@@ -32,3 +34,22 @@ See [adamfranco/OpenMapSamples-MapLibre](https://github.com/adamfranco/OpenMapSa
 
 ### OpenLayers
 _To do..._
+
+## Development
+
+To add an additional sample data set in the OpenMapTiles schema:
+
+1. Add a new script under `samples/OpenMapTiles/`. This script should export a `Sample` as default.
+2. Add the new Sample to `samples/OpenMapTiles/index.js` to register it for use.
+3. Run `npm run test` to ensure that your new sample is returning valid GeoJSON.
+
+To test your sample in a browser, clone the [OpenMapTilesSamples-examples](https://github.com/adamfranco/OpenMapSamples-examples) repository in the same parent-directory as `OpenMapSamples/` and configure it:
+
+    cd ../
+    git clone git@github.com:adamfranco/OpenMapSamples-examples.git
+    cd OpenMapSamples-examples/
+    npm install
+    npm run config
+    # Edit config.js and add your MapTiler cloud key.
+    npm run dev-openmapsamples
+    npm start

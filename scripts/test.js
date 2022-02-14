@@ -1,39 +1,48 @@
 "use strict";
 
-import Sample from "../lib/Sample.js";
-import Layer from "../lib/Layer.js";
-import { ExamplePlaceData, ExampleTransportationData } from "../lib/SampleData/ExampleSampleData.js";
-import SimpleSampleData from "../lib/SampleData/SimpleSampleData.js";
 import {default as OpenMapTilesSamples} from "../samples/OpenMapTiles/index.js";
+import gjv from "geojson-validation";
 
-// Create a new set to hold some samples.
-var sample = new Sample("Test", "This is a test samples.");
-var placeLayer = sample.addLayer(new Layer('place'));
+// console.log(OpenMapTilesSamples);
+// console.log(OpenMapTilesSamples[0].getLayer('transportation').getGeoJson(12)['features'][2]['geometry']);
 
-// Create a Sample and add it to the set.
-var exampleSampleData = new ExamplePlaceData();
-placeLayer.addSampleData(exampleSampleData);
+// Ensure that all samples layers with valid names and GeoJSON.
+OpenMapTilesSamples.forEach((sample, i) => {
+  console.log('Validating ' + sample.getName() + '...');
+  if (sample.getId().length < 1) {
+    console.log(sample);
+    throw "sample.getID() must return a non-empty string. Got: " + sample.getId();
+  }
 
-// Create a SimpleSample and set its GeoJSON.
-var simpleSampleData = placeLayer.addSampleData(new SimpleSampleData());
-simpleSampleData.setGeoJson(exampleSampleData.getGeoJson(12));
+  if (sample.getName().length < 1) {
+    console.log(sample);
+    throw "sample.getName() must return a non-empty string. Got: " + sample.getName();
+  }
 
-// Make sure the SimpleSample validates its GeoJSON.
-try {
-  simpleSampleData.setGeoJson({});
-  console.log("Error: Should not have reached this point.");
-} catch (e) {
-  console.log("Succesfully caught invalid GeoJSON.");
-  console.log("\t" + e);
-}
+  const zoomVariants = sample.getZoomVariants();
+  const zoomVariantZooms = Object.keys(zoomVariants);
+  if (zoomVariantZooms.length < 1) {
+    console.log(zoomVariants);
+    throw "sample.getZoomVariants() must return a non-empty map. Got: " + sample.getZoomVariants();
+  }
 
-var placeLayer2 = sample.getLayer('place');
-console.log(placeLayer2.getGeoJson(10));
+  const layers = sample.getLayers();
+  const layerIds = Object.keys(layers);
+  if (layerIds.length < 1) {
+    console.log(layers);
+    throw "sample.getLayers() should return a non-empty array.";
+  }
 
-// Register some zoom variants.
-console.log(sample.getZoomVariants());
-sample.setZoomVariant(6, [-101, 39]);
-console.log(sample.getZoomVariants());
+  // Check each layer at each zoom variant to ensure that they return valid GeoJSON.
+  layerIds.forEach((layerId, i) => {
+    const layer = sample.getLayer(layerId);
+    zoomVariantZooms.forEach((z, i) => {
+      if (!gjv.valid(layer.getGeoJson(z))) {
+        console.log(layer.getGeoJson(z));
+        throw "layer.getGeoJson(z) must return valid GeoJSON. Got: " + gjv.isFeature(layer.getGeoJson(z), true);
+      }
+    });
+  });
+});
 
-console.log(OpenMapTilesSamples);
-console.log(OpenMapTilesSamples[0].getLayer('transportation').getGeoJson(12)['features'][2]['geometry']);
+console.log("Tests completed successfully.");
