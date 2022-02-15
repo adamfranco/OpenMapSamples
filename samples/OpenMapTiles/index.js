@@ -5,6 +5,7 @@ import { default as HighwayLinkAttributes } from "./HighwayLinkAttributes.js";
 import { default as HighwayIntersections } from "./HighwayIntersections.js";
 import { default as HighwayLinkIntersections } from "./HighwayLinkIntersections.js";
 import { default as HighwayBridgeAndTunnel } from "./HighwayBridgeAndTunnel.js";
+import { default as Places } from "./Places.js";
 
 export default [
   HighwayAttributes,
@@ -12,4 +13,5 @@ export default [
   HighwayIntersections,
   HighwayLinkIntersections,
   HighwayBridgeAndTunnel,
+  Places,
 ];
