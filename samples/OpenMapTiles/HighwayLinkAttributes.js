@@ -20,7 +20,7 @@ var sampleData = new WayRowsSampleData(
     { 'name': 'moto link', 'class': 'motorway', 'ramp': 1 },
     { 'name': 'trunk', 'class': 'trunk' },
     { 'name': 'trnk expy', 'class': 'trunk', 'expressway': 1},
-    { 'name': 'trnk link', 'class': 'trunk' },
+    { 'name': 'trnk link', 'class': 'trunk', 'ramp': 1 },
     { 'name': 'primary', 'class': 'primary' },
     { 'name': 'pri expy', 'class': 'primary', 'expressway': 1},
     { 'name': 'pri link', 'class': 'primary', 'ramp': 1 },
